@@ -2,17 +2,17 @@
 
 namespace JeffersonGoncalves\Filament\UsPrivacyOptOut;
 
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class UsPrivacyOptOutServiceProvider extends PackageServiceProvider
+class UsPrivacyOptOutServiceProvider extends BasePackageServiceProvider
 {
+    public static string $name = 'filament-us-privacy-opt-out';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-us-privacy-opt-out')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->name(static::$name)
+            ->hasTranslations();
     }
 }
